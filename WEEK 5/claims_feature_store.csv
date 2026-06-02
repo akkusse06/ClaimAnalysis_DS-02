@@ -1,0 +1,15 @@
+Column Name,Data Type,Feature Type,Business Definition & Context
+Claim ID,String / Int,Identifier,"Unique identifier for the medical claim. (Excluded from training, used for tracking)."
+Provider ID,String / Int,Categorical,Unique identifier for the healthcare facility or physician submitting the claim.
+Patient ID,String / Int,Identifier,Unique identifier for the patient receiving treatment.
+Billed Amount,Float,Numerical,The total gross dollar amount charged by the provider before any adjustments.
+Procedure Code,Categorical,Categorical,"Standardized medical code (e.g., CPT/HCPCS) indicating the specific treatment administered."
+Diagnosis Code,Categorical,Categorical,"Standardized medical code (e.g., ICD-10) indicating the patient's diagnosed condition."
+claim_age_days,Integer,Numerical,The total number of days elapsed between the date of service and the claim submission date.
+high_value_flag,Boolean / Binary,Categorical,A flag (1 or 0) indicating if the billed amount exceeds a specific high-tier threshold.
+repeat_claimant_flag,Boolean / Binary,Categorical,A flag indicating if the patient has had prior claims within a trailing window.
+seasonal_month,Integer (1–12),Categorical,"The month the claim was submitted, capturing seasonal healthcare trends (e.g., flu season)."
+trust_approval_rate,Float (0.0–1.0),Numerical,"Historical historical approval rate of the provider, acting as a proxy score for trust."
+Claim Status,String / Binary,Target 1,"The primary model target (e.g., Approved, Denied, Rejected)."
+Outcome,String / Categorical,Target 2,The secondary target detailing the final resolution category of the claim.
+,,,
